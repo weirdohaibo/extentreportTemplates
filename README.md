@@ -18,6 +18,6 @@ extentreportTemplates for httprunner2.0.0
 2.在每次运行命令后加上：`--report-template 'path/to/extentreportName'`
 
 ### 报告示例
-![](https://github.com/weirdohaibo/extentReportTemplates/img/image_1.jpg)
+![](https://github.com/weirdohaibo/extentreportTemplates/blob/master/img/image_1.jpg)
 
 ### End
