@@ -529,7 +529,7 @@
                         <div class='category-heading'>
                             <span class='category-name'>All TESTCASES</span>
                             <span class='category-status right'>
-							    <span class='label pass'>{{ stat.testcases.success }} </span>
+                                <span class='label pass'>{{ stat.testcases.success }} </span>
                                 {% if stat.testcases.fail != 0 %}
                                     <span class='label fail'>{{ stat.testcases.fail }}</span>
                                 {% endif %}
@@ -600,7 +600,7 @@
                             <div class='category-heading'>
                                 <span class='category-name'>{{ test_suite_summary.name }}</span>
                                 <span class='category-status right'>
-							    <span class='label pass'>{{ test_suite_summary.stat.successes }} </span>
+                                <span class='label pass'>{{ test_suite_summary.stat.successes }} </span>
                                     {% if test_suite_summary.stat.failures != 0 %}
                                         <span class='label fail'>{{ test_suite_summary.stat.failures }}</span>
                                     {% endif %}
@@ -823,7 +823,8 @@
 </script>>
 <script type="text/javascript">
     function step_filter(mytype){
-        teststeps = document.getElementsByClassName('collapsible node-list')[1].getElementsByTagName('li');
+        testcontents = document.getElementsByClassName('test-content')
+        teststeps = testcontents[testcontents.length - 1].getElementsByTagName('li');
         stepfilters = document.getElementById('step-filters').getElementsByTagName('span');
         for (var i=0, len=stepfilters.length;i<len;i++){
             if (stepfilters[i].getAttribute('status') != mytype){
