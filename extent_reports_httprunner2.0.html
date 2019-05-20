@@ -43,10 +43,19 @@
             overflow: auto;
         }
         #checkvalue td:first-child,tr:first-child {
-            width: 180px
+            width: 150px
         }
         #checkvalue td:nth-child(5),tr:nth-child(5) {
             width: 60px
+        }
+        #checkvalue td:nth-child(2),tr:nth-child(2) {
+            width: 60px
+        }
+        #checkvalue td:nth-child(3),tr:nth-child(3) {
+            min-width: 100px;
+        }
+        #checkvalue td:nth-child(4),tr:nth-child(4) {
+            min-width: 100px;
         }
         .noncar-seventy-five {
             display: inline-block;
@@ -565,7 +574,7 @@
                         <div class='category-heading'>
                             <span class='category-name'>All TESTCASES</span>
                             <span class='category-status right'>
-							    <span class='label pass'>{{ stat.testcases.success }} </span>
+                                <span class='label pass'>{{ stat.testcases.success }} </span>
                                 {% if stat.testcases.fail != 0 %}
                                     <span class='label fail'>{{ stat.testcases.fail }}</span>
                                 {% endif %}
@@ -630,7 +639,7 @@
                             <div class='category-heading'>
                                 <span class='category-name'>{{ test_suite_summary.name }}</span>
                                 <span class='category-status right'>
-							    <span class='label pass'>{{ test_suite_summary.stat.successes }} </span>
+                                <span class='label pass'>{{ test_suite_summary.stat.successes }} </span>
                                     {% if test_suite_summary.stat.failures != 0 %}
                                         <span class='label fail'>{{ test_suite_summary.stat.failures }}</span>
                                     {% endif %}
