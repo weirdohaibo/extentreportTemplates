@@ -20,4 +20,3 @@ extentreportTemplates for httprunner2.0.0
 ### 报告示例
 ![](https://github.com/weirdohaibo/extentreportTemplates/blob/master/img/image_1.jpg)
 
-### End
