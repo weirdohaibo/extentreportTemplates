@@ -212,61 +212,59 @@
                 <!-- search -->
             </div>
         </section>
-        <div id='test-view-charts' class='subview-full'>
-            <div id='test-view-charts' class='noncar-seventy-five'>
-                <div id='charts-row' class='noncar-wrap'>
-                    <div class=' noncar-inside'>
-                        <div class='noncar-title'>
-                            <div class='left panel-name'>TESTCASES</div>
-                        </div>
-                        <div class="noncar-content">
-                            <div class="noncar-content-l" >
-                                <div class='block text'>
-                                    <span class='strong tooltipped' data-position='top'>total testcases:  {{ stat.testcases.total }}</span>
-                                </div>
-                                <div class='block text'>
-                                    <span class='strong tooltipped' data-position='top'>success testcases:  {{ stat.testcases.success }}</span>
-                                </div>
-                                <div class='block text'>
-                                    <span class='strong tooltipped' data-position='top'>fail testcases:  {{ stat.testcases.fail }}</span>
-                                </div>
+        <div id='test-view-charts' class='subview-full noncar-seventy-five'>
+            <div id='charts-row' class='noncar-wrap'>
+                <div class=' noncar-inside'>
+                    <div class='noncar-title'>
+                        <div class='left panel-name'>TESTCASES</div>
+                    </div>
+                    <div class="noncar-content">
+                        <div class="noncar-content-l" >
+                            <div class='block text'>
+                                <span class='strong tooltipped' data-position='top'>total testcases:  {{ stat.testcases.total }}</span>
                             </div>
-                            <div class="noncar-content-r" style="-webkit-tap-highlight-color: transparent; user-select: none; position: relative; background: transparent;">
-                                <div class='chart-box'  width="369" height="140" data-zr-dom-id="zr_0" style="position: absolute; left: 0px; top: 0px; width: 369px; height: 140px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;">
-                                    <canvas id="child-analysis" width="369" height="140" style="position: absolute; left: 0px; top: 0px; width: 369px; height: 140px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;">
-                                    </canvas>
-                                </div>
+                            <div class='block text'>
+                                <span class='strong tooltipped' data-position='top'>success testcases:  {{ stat.testcases.success }}</span>
+                            </div>
+                            <div class='block text'>
+                                <span class='strong tooltipped' data-position='top'>fail testcases:  {{ stat.testcases.fail }}</span>
+                            </div>
+                        </div>
+                        <div class="noncar-content-r" style="-webkit-tap-highlight-color: transparent; user-select: none; position: relative; background: transparent;">
+                            <div class='chart-box'  width="369" height="140" data-zr-dom-id="zr_0" style="position: absolute; left: 0px; top: 0px; width: 369px; height: 140px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;">
+                                <canvas id="child-analysis" width="369" height="140" style="position: absolute; left: 0px; top: 0px; width: 369px; height: 140px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;">
+                                </canvas>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div id='charts-row' class='noncar-wrap'>
-                    <div class=' noncar-inside'>
-                        <div class='noncar-title'>
-                            <div class='left panel-name'>TESTSTEPS</div>
-                        </div>
-                        <div class="noncar-content">
-                            <div class="noncar-content-l" >
-                                <div class='block text'>
-                                    <span class='strong tooltipped' data-position='top'>total teststeps:  {{ stat.teststeps.total }}</span>
-                                </div>
-                                <div class='block text'>
-                                    <span class='strong tooltipped' data-position='top'>successes teststeps:  {{ stat.teststeps.successes }}</span>
-                                </div>
-                                <div class='block text'>
-                                    <span class='strong tooltipped' data-position='top'>failures teststeps:  {{ stat.teststeps.failures }}</span>
-                                </div>
-                                <div class='block text'>
-                                    <span class='strong tooltipped' data-position='top'>errors teststeps:  {{ stat.teststeps.errors }}</span>
-                                </div>
-                                <div class='block text'>
-                                    <span class='strong tooltipped' data-position='top'>skipped teststeps:  {{ stat.teststeps.skipped }}</span>
-                                </div>
+            </div>
+            <div id='charts-row' class='noncar-wrap'>
+                <div class=' noncar-inside'>
+                    <div class='noncar-title'>
+                        <div class='left panel-name'>TESTSTEPS</div>
+                    </div>
+                    <div class="noncar-content">
+                        <div class="noncar-content-l" >
+                            <div class='block text'>
+                                <span class='strong tooltipped' data-position='top'>total teststeps:  {{ stat.teststeps.total }}</span>
                             </div>
-                            <div class="noncar-content-r" style="-webkit-tap-highlight-color: transparent; user-select: none; position: relative; background: transparent;">
-                                <div class='chart-box'  width="369" height="140" style="position: absolute; left: 0px; top: 0px; width: 369px; height: 140px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;">
-                                    <canvas id='parent-analysis' width='369' height='140' style="position: absolute; left: 0px; top: 0px; width: 369px; height: 140px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas>
-                                </div>
+                            <div class='block text'>
+                                <span class='strong tooltipped' data-position='top'>successes teststeps:  {{ stat.teststeps.successes }}</span>
+                            </div>
+                            <div class='block text'>
+                                <span class='strong tooltipped' data-position='top'>failures teststeps:  {{ stat.teststeps.failures }}</span>
+                            </div>
+                            <div class='block text'>
+                                <span class='strong tooltipped' data-position='top'>errors teststeps:  {{ stat.teststeps.errors }}</span>
+                            </div>
+                            <div class='block text'>
+                                <span class='strong tooltipped' data-position='top'>skipped teststeps:  {{ stat.teststeps.skipped }}</span>
+                            </div>
+                        </div>
+                        <div class="noncar-content-r" style="-webkit-tap-highlight-color: transparent; user-select: none; position: relative; background: transparent;">
+                            <div class='chart-box'  width="369" height="140" style="position: absolute; left: 0px; top: 0px; width: 369px; height: 140px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;">
+                                <canvas id='parent-analysis' width='369' height='140' style="position: absolute; left: 0px; top: 0px; width: 369px; height: 140px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas>
                             </div>
                         </div>
                     </div>
