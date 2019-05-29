@@ -336,7 +336,7 @@
                                 </div>
                                 <div class='collapsible-body'>
                                     {% for meta_data in record_meta_datas %}
-                                    {% set meta_data_index = "{}_{}".format(record_index, loop.index) %}
+                                    {% set meta_data_index = loop%}
                                     <div class='node-steps'>
                                         {% for req_resp in meta_data.data %}
                                             <table class='bordered table-results'>
@@ -362,7 +362,7 @@
                                                 </tbody>
                                                 {% else %}
                                                     {% if loop.index > 1 %}
-                                                        <div class="separator" align="center">==================================== redirect to ====================================</div>
+                                                    <div class="separator" align="center">==================================== redirect to ====================================</div>
                                                     {% endif %}
                                                     <tbody>
                                                     <tr class='info' status='info'>
@@ -407,7 +407,9 @@
                                                             </tr>
                                                         {% endif %}
                                                     {% endfor %}
-
+                                                    {% if meta_data_index.length > 1 %}
+                                                    <div class="separator" align="center">==================================== request_{{meta_data_index.index}} ====================================</div>
+                                                    {% endif%}
                                                     {% for key, value in req_resp.response.items() %}
                                                         {% if key != "elapsed_ms" and key != "response_time_ms" and key != "content_size" and key != "content_type" and key != "status_code" and key != "reason" and key != "ok" and key != "encoding" and key != "url" and value %}
                                                             <tr class='error' status='error'>
@@ -496,7 +498,8 @@
                                                         </td>
                                                     </tr>
 
-                                                    {% if record.attachment %}
+                                                    {% if record.attachment and meta_data_index.last %}
+
                                                         <tr class='fail' status='fail'>
                                                             <td class='status fail' title='exception' alt='fail'><i
                                                                     class='material-icons'>cancel</i></td>
@@ -572,7 +575,7 @@
                         <div class='category-heading'>
                             <span class='category-name'>All TESTCASES</span>
                             <span class='category-status right'>
-                                <span class='label pass'>{{ stat.testcases.success }} </span>
+							    <span class='label pass'>{{ stat.testcases.success }} </span>
                                 {% if stat.testcases.fail != 0 %}
                                     <span class='label fail'>{{ stat.testcases.fail }}</span>
                                 {% endif %}
@@ -610,9 +613,9 @@
                                         </tr>
                                         {% for record in test_suite_summary.records %}
                                             <tr>
-                                                <td>{{ record.meta_datas.stat.response_time_ms }} ms</td>
+                                                <td>{{ record.response_time_ms }} ms</td>
                                                 <td class='linked'
-                                                    test-id='{{ test_suite_summary.name }}_{{ record.name }}_{{ loop.index }}'>{{ record.name }}</td>
+                                                    test-id='{{ test_suite_summary.name }}_{{ loop.index }}'>{{ record.name }}</td>
                                                 {% if record.status == 'success' %}
                                                     <td><span class='test-status pass'>pass</span></td>
                                                 {% elif record.status == 'failure' %}
@@ -637,7 +640,7 @@
                             <div class='category-heading'>
                                 <span class='category-name'>{{ test_suite_summary.name }}</span>
                                 <span class='category-status right'>
-                                <span class='label pass'>{{ test_suite_summary.stat.successes }} </span>
+							    <span class='label pass'>{{ test_suite_summary.stat.successes }} </span>
                                     {% if test_suite_summary.stat.failures != 0 %}
                                         <span class='label fail'>{{ test_suite_summary.stat.failures }}</span>
                                     {% endif %}
@@ -669,9 +672,9 @@
                                         <tbody>
                                         {% for record in test_suite_summary.records %}
                                             <tr>
-                                                <td>{{ record.meta_datas.stat.response_time_ms }}</td>
+                                                <td>{{ record.response_time_ms }}</td>
                                                 <td class='linked'
-                                                    test-id='{{ test_suite_summary.name }}_{{ record.name }}_{{ loop.index }}'>{{ record.name }}</td>
+                                                    test-id='{{ test_suite_summary.name }}_{{ loop.index }}'>{{ record.name }}</td>
                                                 {% if record.status == 'success' %}
                                                     <td><span class='test-status pass'>pass</span></td>
                                                 {% elif record.status == 'failure' %}
