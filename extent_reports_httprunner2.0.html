@@ -613,7 +613,7 @@
                                         </tr>
                                         {% for record in test_suite_summary.records %}
                                             <tr>
-                                                <td>{{ record.response_time_ms }} ms</td>
+                                                <td>{{ record.response_time }} ms</td>
                                                 <td class='linked'
                                                     test-id='{{ test_suite_summary.name }}_{{ loop.index }}'>{{ record.name }}</td>
                                                 {% if record.status == 'success' %}
@@ -672,7 +672,7 @@
                                         <tbody>
                                         {% for record in test_suite_summary.records %}
                                             <tr>
-                                                <td>{{ record.response_time_ms }}</td>
+                                                <td>{{ record.response_time }}</td>
                                                 <td class='linked'
                                                     test-id='{{ test_suite_summary.name }}_{{ loop.index }}'>{{ record.name }}</td>
                                                 {% if record.status == 'success' %}
